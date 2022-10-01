@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 page - codegrid</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/404.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  </head>
+  <body class="error">
+    <div class="container">
+      <nav class="menu">
+        <div class="menu-left menu-item">
+          <a href="about.html" class="menu-link">about</a>
+          <a href="404.html" class="menu-link">contact</a>
+        </div>
+        <div class="menu-center menu-item">
+          <div class="brand-logo">skeletons</div>
+        </div>
+        <div class="menu-right menu-item">
+          <div class="search-icon">
+            <ion-icon name="search-sharp"></ion-icon>
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-container">
+        <div class="header">
+          <span>4</span>
+          <span>0</span>
+          <span>4</span>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>Seems you are lost, come back <a href="index.html"><u>Home</u></a></span>
+        <div class="footer-wrapper"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    TweenMax.staggerFrom(
+  ".menu > div, .hero-container > div",
+  2,
+  {
+    opacity: 0,
+    y: 30,
+    ease: Expo.easeInOut,
+    delay: 4.2,
+  },
+  0.1
+);
+    gsap.from(".navbar > div", 1.6, {
+      opacity: 0,
+      y: 60,
+      ease: Expo.easeInOut,
+      delay: 2.4,
+    });
+    gsap.from(".site-logo", 1.6, {
+      opacity: 0,
+      y: 40,
+      ease: Expo.easeInOut,
+      delay: 2.4,
+    });
+    gsap.from(".header > span", 1.5, {
+      top: "-100vh",
+      ease: "bounce.out",
+      delay: 1,
+      stagger: 0.2,
+    });
+    gsap.to(".footer span", 0.4, {
+      y: -40,
+      ease: Expo.easeInOut,
+      delay: 2.4,
+    });
+  </script>
+</html>
